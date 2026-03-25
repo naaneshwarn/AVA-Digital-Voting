@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AVA Digital Voting Machine</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Lato:wght@400;700&display=swap');
+
+      body {
+        font-family: 'Lato', sans-serif;
+        background-color: #0F172A;
+      }
+
+      .font-poppins {
+        font-family: 'Poppins', sans-serif;
+      }
+      
+      @keyframes zoom-in-out {
+        0%, 100% {
+          transform: scale(1);
+          opacity: 1;
+        }
+        50% {
+          transform: scale(1.1);
+          opacity: 0.8;
+        }
+      }
+
+      @keyframes glow-pulse-saffron {
+          0%, 100% { box-shadow: 0 0 15px rgba(255, 153, 51, 0.5); }
+          50% { box-shadow: 0 0 30px rgba(255, 153, 51, 0.8); }
+      }
+
+      @keyframes glow-pulse-green {
+          0%, 100% { box-shadow: 0 0 15px rgba(19, 136, 8, 0.6); }
+          50% { box-shadow: 0 0 30px rgba(19, 136, 8, 1); }
+      }
+
+      @keyframes glow-pulse-red {
+          0%, 100% { box-shadow: 0 0 15px rgba(220, 38, 38, 0.6); }
+          50% { box-shadow: 0 0 30px rgba(220, 38, 38, 1); }
+      }
+
+      .tri-gradient-border {
+        border: 2px solid;
+        border-image-slice: 1;
+        border-width: 2px;
+        border-image-source: linear-gradient(to bottom right, #FF9933, #FFFFFF, #138808);
+      }
+    </style>
+  <script type="importmap">
+  {
+    "imports": {
+      "react": "https://aistudiocdn.com/react@^18.2.0",
+      "react/": "https://aistudiocdn.com/react@^18.2.0/",
+      "react-dom": "https://aistudiocdn.com/react-dom@^18.2.0",
+      "react-dom/": "https://aistudiocdn.com/react-dom@^18.2.0/",
+      "react/jsx-runtime": "https://aistudiocdn.com/react@^18.2.0/jsx-runtime",
+      "firebase/app": "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js",
+      "firebase/firestore": "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js",
+      "@google/genai": "https://aistudiocdn.com/@google/genai@beta",
+      "firebase/": "https://aistudiocdn.com/firebase@^12.3.0/"
+    }
+  }
+</script>
+<script>
+  // Polyfill for process.env to avoid ReferenceError in browser environments
+  // without a build step. The Gemini API client requires this to be defined.
+  if (typeof window.process === 'undefined') {
+    window.process = { env: {} };
+  }
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>

@@ -1,0 +1,7 @@
+{
+  "name": "AVA Digital Voting Machine",
+  "description": "A secure and aesthetically polished digital voting machine interface with a patriotic Indian theme. It features a multi-step voting process from registration to biometric verification and final vote casting.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
